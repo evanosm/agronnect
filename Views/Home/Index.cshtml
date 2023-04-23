@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="hero">
+    <h1 class="hero-title">Bienvenue sur <span class="text-primary">Agronnect</span></h1>
+    <span class="text-secondary fst-italic fw-lighter">Votre annuaire d'entreprise</span>
+    <div class="hero-buttons">
+        <a asp-controller="Employees" asp-action="Index" class="btn btn-primary">Accéder à l'annuaire</a>
+        <a asp-controller="Auth" asp-action="Login" class="btn btn-outline-primary">Se connecter</a>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+@model AnnuaireCESI.Models.AddEmployeeViewModel
+@{
+    Layout = "_Layout";
+}
+
+<form method="post" action="/Employees/Add">
+    <div class="mb-3">
+        <label for="" class="form-label">Prénom</label>
+        <input type="text" class="form-control" name="FirstName" id="FirstName">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Nom</label>
+        <input type="text" class="form-control" name="LastName" id="LastName">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Adresse Email</label>
+        <input type="email" class="form-control" name="Email" id="Email">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Téléphone Fixe</label>
+        <input type="text" class="form-control" name="Phone" id="Phone">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Téléphone Mobile</label>
+        <input type="text" class="form-control" name="Mobile" id="Mobile">
+    </div>
+
+    <div class="mb-3">
+        <label>Service</label>
+        <select class="form-select form-control" name="ServiceId" id="ServiceId">
+            @foreach (var service in Model.Services)
+            {
+                <option value="@service.ServiceId">@service.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Site</label>
+        <select class="form-select form-control" name="SiteId" id="SiteId">
+            @foreach (var site in Model.Sites)
+            {
+                <option value="@site.SiteId">@site.City</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>

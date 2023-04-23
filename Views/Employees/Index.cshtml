@@ -1,0 +1,13 @@
+@model List<AnnuaireCESI.Models.Employee>
+
+<h1>Liste des employés :</h1>
+
+<div>
+    @foreach(var employee in Model)
+    {
+        <div>
+            <h2>@employee.FirstName</h2>
+            <p>@employee.Email</p>
+        </div>
+    }
+</div>
