@@ -1,5 +1,3 @@
-using AnnuaireCESI.Models;
-
 namespace AnnuaireCESI.Models;
 
 public class Service

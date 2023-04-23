@@ -22,6 +22,26 @@ namespace AnnuaireCESI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("AnnuaireCESI.Models.AccessRequest", b =>
+                {
+                    b.Property<Guid>("RequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("RequestId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("AccessRequests");
+                });
+
             modelBuilder.Entity("AnnuaireCESI.Models.Employee", b =>
                 {
                     b.Property<Guid>("EmployeeId")
@@ -35,6 +55,9 @@ namespace AnnuaireCESI.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -97,6 +120,17 @@ namespace AnnuaireCESI.Migrations
                     b.HasKey("SiteId");
 
                     b.ToTable("Sites");
+                });
+
+            modelBuilder.Entity("AnnuaireCESI.Models.AccessRequest", b =>
+                {
+                    b.HasOne("AnnuaireCESI.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("AnnuaireCESI.Models.Employee", b =>

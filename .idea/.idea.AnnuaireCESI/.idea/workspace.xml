@@ -5,155 +5,32 @@
     <projectFile profileName="https">AnnuaireCESI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="Init">
-      <change afterPath="$PROJECT_DIR$/AnnuaireCESI.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AnnuaireCESI.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/EmployeesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20230423094815_NullablePassword.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20230423094815_NullablePassword.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/EmployeeModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/ErrorViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/MailRequestModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/ServiceModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/SiteModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/ViewModels/AddEmployeeViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Auth/Login.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Auth/Login.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Add.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Add.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Details.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Details.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Employees/Index.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Home/Privacy.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/_ViewImports.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/_ViewStart.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.staticwebassets.runtime.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Humanizer.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Mono.TextTemplating.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/Npgsql.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/System.CodeDom.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.EntityFrameworkCore.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.RazorAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.RazorAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/apphost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/scopedcss/bundle/AnnuaireCESI.styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/scopedcss/projectbundle/AnnuaireCESI.bundle.scp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.AnnuaireCESI.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.build.AnnuaireCESI.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.AnnuaireCESI.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.AnnuaireCESI.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/js/site.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation/dist/additional-methods.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery/dist/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
+    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/MailRequestModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AccessRequestModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ServiceModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ServiceModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Auth/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Auth/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/apphost" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,23 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowGit.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/evanosm/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/evanosm/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AnnuaireCESI: http">
     <configuration name="AnnuaireCESI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AnnuaireCESI.csproj" />
@@ -232,7 +110,24 @@
       <option name="presentableId" value="Default" />
       <updated>1682179655818</updated>
       <workItem from="1682179656854" duration="20784000" />
+      <workItem from="1682252363552" duration="187000" />
+      <workItem from="1682252560383" duration="2204000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1682252483327</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682252483327</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Init">
+      <created>1682252518277</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682252518277</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

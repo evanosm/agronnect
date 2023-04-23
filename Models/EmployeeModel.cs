@@ -12,6 +12,7 @@ public class Employee
     public string Mobile { get; set; }
     public string Email { get; set; }
     public string? Password { get; set; }
+    public bool IsAdmin { get; set; } = false;
     public Service Service { get; set; }
     public Site Site { get; set; }
 }
