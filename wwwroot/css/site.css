@@ -1,24 +1,80 @@
+:root {
+    --darker: #18181a;
+}
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Grid */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0%, 1fr));
+    grid-gap: 16px;
+    gap: 16px;
+}
+
+.twoColumns {
+    grid-template-columns: repeat(2, minmax(0%, 1fr));
+}
+
+.threeColumns {
+    grid-template-columns: repeat(3, minmax(0%, 1fr));
+}
+
+.fourColumns {
+    grid-template-columns: repeat(4, minmax(0%, 1fr));
+}
+
+@media screen and (max-width: 1200px) {
+    .twoColumns {
+        grid-template-columns: repeat(1, minmax(0%, 1fr));
+    }
+
+    .threeColumns {
+        grid-template-columns: repeat(2, minmax(0%, 1fr));
+    }
+
+    .fourColumns {
+        grid-template-columns: repeat(3, minmax(0%, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .threeColumns {
+        grid-template-columns: repeat(1, minmax(0%, 1fr));
+    }
+
+    .fourColumns {
+        grid-template-columns: repeat(2, minmax(0%, 1fr));
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .fourColumns {
+        grid-template-columns: repeat(1, minmax(0%, 1fr));
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 .wrapper {
-  padding-top: 96px;
+    padding-top: 96px;
 }
 
 .hero {
@@ -46,3 +102,63 @@ html {
     display: flex;
     gap: 0 8px;
 }
+
+.sm-card {
+    background-color: var(--darker);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-decoration: none;
+    box-shadow: 0 0 0px 0px #0D6EFD00;
+    transition: box-shadow 0.3s ease-in;
+}
+
+.sm-card:hover {
+    box-shadow: 0 0 100px 0px #0D6EFD90;
+    transition: box-shadow 0.5s ease-out;
+    cursor: pointer;
+}
+
+.sm-card > h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.sm-card > span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--bs-secondary);
+}
+
+.modal-layout {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--darker);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0;
+    left: 50%;
+    top: 25%;
+    transform: translateY(-100px) translateX(-50%) scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.modal-layout > h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.modal-active {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%) scale(1);
+}
+
