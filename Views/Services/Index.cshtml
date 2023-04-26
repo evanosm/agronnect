@@ -1,0 +1,50 @@
+@model List<Service>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container modal-layout" id="addServiceModal">
+    <h1 class="text-primary">Entrez le nom du service</h1>
+    <form method="post" action="/Services/Add">
+        <div class="mb-3">
+            <label for="" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="Name" id="Name">
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger" id="addServiceModalClose">Annuler</button>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+    </form>
+</div>
+
+<div class="container wrapper">
+    <div class="my-3 d-flex justify-content-between align-items-center">
+        <h1>Les Services :</h1>
+        <button class="btn btn-primary" id="addService">+ Ajouter un service</button>
+    </div>
+
+    <div class="grid-layout threeColumns">
+        @foreach (var service in Model)
+        {
+            <div class="sm-card">
+                <h3 class="text-primary">@service.Name</h3>
+                <span>@service.Employees.Count().ToString() employés</span>
+            </div>
+        }
+    </div>
+</div>
+
+<script defer>
+    const addServiceButton = document.getElementById("addService");
+    const addServiceModal = document.getElementById("addServiceModal");
+    const addServiceModalClose = document.getElementById("addServiceModalClose");
+    
+    addServiceButton.addEventListener("click", () => {
+        addServiceModal.classList.add("modal-active");
+    });
+    
+    addServiceModalClose.addEventListener("click", () => {
+        addServiceModal.classList.remove("modal-active");
+    });
+</script>
