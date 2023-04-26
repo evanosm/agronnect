@@ -1,0 +1,42 @@
+@model List<AnnuaireCESI.Models.AccessRequest>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container wrapper">
+    <h1>Demandes d'accès</h1>
+
+    @if (ViewBag.Success != null)
+    {
+        <div class="alert alert-success mt-3" role="alert">
+            @ViewBag.Success
+        </div>
+    }
+
+    @if (Model != null)
+    {
+        @foreach (var request in Model)
+        {
+            <div class="col-12 d-flex justify-content-between align-items-center p-3 bg-light rounded-3 mt-3">
+                <div>
+                    <span class="text-primary fw-bold">@request.Employee.FirstName @request.Employee.LastName</span>
+                    <span class="text-secondary fst-italic">(@request.Employee.Email)</span>
+                    <span class="text-truncate text-dark">@request.Details</span>
+                </div>
+                <div class="btn-group">
+                    <form method="post" action="/Admin/AcceptRequest/@request.RequestId">
+                        <button type="submit" class="btn btn-outline-success">Accepter</button>
+                    </form>
+                    <form method="post" action="/Admin/DenyRequest/@request.RequestId">
+                        <button type="submit" class="btn btn-danger">Refuser</button>
+                    </form>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h1>Il n'y a aucune requête en attente</h1>
+    }
+</div>
