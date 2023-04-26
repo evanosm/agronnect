@@ -29,11 +29,20 @@ public class AuthController : Controller
     [HttpPost]
     public async Task<IActionResult> RequestAccess(string email, string details)
     {
+        Console.WriteLine(email, details);
         var employee = await _context.Employees.FirstOrDefaultAsync(e => e.Email == email);
 
         if (employee == null)
         {
-            return NotFound();
+            ViewBag.Error =
+                "L'adresse email n'existe pas dans notre base de donnée, veuillez contacter votre administrateur.";
+            return View("RequestAccess");
+        }
+
+        if (employee.IsAdmin)
+        {
+            ViewBag.Error = "Vous êtes déjà administrateur.";
+            return View("RequestAccess");
         }
 
         var request = new AccessRequest()
@@ -42,7 +51,10 @@ public class AuthController : Controller
             Employee = employee,
             Details = details
         };
+        await _context.AccessRequests.AddAsync(request);
         await _context.SaveChangesAsync();
-        return RedirectToAction("Login");
+        ViewBag.Success =
+            "Votre demande a bien été prise en compte, vous recevrez un email de confirmation avec un mot de passe lorsque votre compte sera activé.";
+        return View("RequestAccess");
     }
 }
