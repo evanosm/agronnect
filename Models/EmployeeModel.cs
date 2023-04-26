@@ -13,6 +13,7 @@ public class Employee
     public string Email { get; set; }
     public string? Password { get; set; }
     public bool IsAdmin { get; set; } = false;
+    public string? TempPassword { get; set; }
     public Service Service { get; set; }
     public Site Site { get; set; }
 }
