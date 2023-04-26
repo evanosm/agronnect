@@ -1,8 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace AnnuaireCESI.Models;
 
 public class Site
 {
-    public int SiteId { get; set; }
+    [Key] public int SiteId { get; set; }
     public string City { get; set; }
-    public ICollection<Employee> Employees { get; set; }
+    public string Description { get; set; }
+    public ICollection<Employee>? Employees { get; set; }
 }
