@@ -40,3 +40,4 @@
 /Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/obj/Debug/net7.0/AnnuaireCESI.pdb
 /Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/obj/Debug/net7.0/AnnuaireCESI.genruntimeconfig.cache
 /Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/obj/Debug/net7.0/ref/AnnuaireCESI.dll
+/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/bin/Debug/net7.0/BCrypt.Net-Core.dll

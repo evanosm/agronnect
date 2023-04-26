@@ -79,6 +79,9 @@ namespace AnnuaireCESI.Migrations
                     b.Property<int>("SiteId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("TempPassword")
+                        .HasColumnType("text");
+
                     b.HasKey("EmployeeId");
 
                     b.HasIndex("ServiceId");
@@ -114,6 +117,10 @@ namespace AnnuaireCESI.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SiteId"));
 
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
 

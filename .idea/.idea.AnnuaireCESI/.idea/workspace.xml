@@ -6,30 +6,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ServicesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/ViewModels/HomeViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Requests.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Services/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnuaireCESI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AnnuaireCESI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/MailRequestModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AccessRequestModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/EmployeeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/ServiceModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ServiceModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Auth/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Auth/Login.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/SiteModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SiteModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/apphost" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,25 +63,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowGit.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowGit.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editing.templates",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/evanosm/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/evanosm/.local/share/Symbols/src"
     ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.AnnuaireCESI: http">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.AnnuaireCESI: https">
     <configuration name="AnnuaireCESI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AnnuaireCESI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -111,7 +123,8 @@
       <updated>1682179655818</updated>
       <workItem from="1682179656854" duration="20784000" />
       <workItem from="1682252363552" duration="187000" />
-      <workItem from="1682252560383" duration="2204000" />
+      <workItem from="1682252560383" duration="14994000" />
+      <workItem from="1682316389901" duration="15561000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1682252483327</created>
@@ -127,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682252518277</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+Login page, +RequestAccess Model, page, +AuthController, Added isAdmin in Employee model, refined _Layout">
+      <created>1682255035240</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682255035240</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +169,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="+Login page, +RequestAccess Model, page, +AuthController, Added isAdmin in Employee model, refined _Layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Login page, +RequestAccess Model, page, +AuthController, Added isAdmin in Employee model, refined _Layout" />
   </component>
 </project>

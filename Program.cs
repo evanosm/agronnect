@@ -12,7 +12,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AnnuaireDbContext>(
     options => options.UseNpgsql(
         "Host=localhost;Database=annuaire-dotnet;Username=postgres;Password=postgres;Port=5432"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,3 +34,12 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+public class SmtpConfiguration
+{
+    public string Host { get; set; }
+    public int Port { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+}

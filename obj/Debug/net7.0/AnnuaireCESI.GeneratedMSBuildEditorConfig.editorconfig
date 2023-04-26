@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/evanosm/Documents/dev/dotnet/AnnuaireCESI
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Admin/Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Shared/Error.cshtml]

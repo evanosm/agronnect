@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "icavW6ssJDuYLdNZG4/s14HDeUODWleZ+wDYEUI4nhiDHAqefstX6xo+s0a+yParfo/E7dzhaIFhj9zXN7rQeQ==",
+  "dgSpecHash": "8E869odD3dl7s9WhRK3wMo9CXdVEm4t9yOA87WD+trBSZgZGLwkr96ggRTWZJuobw3QINT81h0wCkw2+swMIKg==",
   "success": true,
   "projectFilePath": "/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/AnnuaireCESI.csproj",
   "expectedPackageFiles": [
+    "/Users/evanosm/.nuget/packages/bcrypt.net-core/1.6.0/bcrypt.net-core.1.6.0.nupkg.sha512",
     "/Users/evanosm/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/evanosm/.nuget/packages/microsoft.entityframeworkcore/7.0.5/microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "/Users/evanosm/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.5/microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
