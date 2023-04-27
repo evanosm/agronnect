@@ -9,11 +9,25 @@
     <form method="post" action="/Services/Add">
         <div class="mb-3">
             <label for="" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="Name" id="Name">
+            <input type="text" class="form-control" name="Name" id="createName">
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-outline-danger" id="addServiceModalClose">Annuler</button>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+            <button type="submit" class="btn btn-primary" asp-controller="Services" asp-action="Add">Ajouter</button>
+        </div>
+    </form>
+</div>
+
+<div class="container modal-layout" id="updateServiceModal">
+    <h1 class="text-primary">Entrez le nom du service</h1>
+    <form method="post" action="/Services/Add" id="updateForm">
+        <div class="mb-3">
+            <label for="" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="Name" id="updateName">
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger" id="updateServiceModalClose">Annuler</button>
+            <button type="submit" class="btn btn-success">Sauvegarder</button>
         </div>
     </form>
 </div>
@@ -27,24 +41,65 @@
     <div class="grid-layout threeColumns">
         @foreach (var service in Model)
         {
-            <div class="sm-card">
-                <h3 class="text-primary">@service.Name</h3>
-                <span>@service.Employees.Count().ToString() employés</span>
+            <div class="sm-card d-flex gap-3 flex-column">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="/Services/Details/@service.ServiceId" class="text-primary fw-bold sm-card-title">@service.Name</a>
+
+                    <button type="submit" class="btn btn-outline-secondary updateService" data-serviceid="@service.ServiceId">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                </div>
+                <div class="d-flex justify-content-between align-items-end">
+                    <span class="text-secondary fst-italic">@service.Employees.Count().ToString() employés</span>
+                    <form method="post" action="/Services/Delete/@service.ServiceId">
+                        <button type="submit" class="btn btn-outline-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         }
     </div>
 </div>
 
 <script defer>
+    // Get the modal to create a Service
     const addServiceButton = document.getElementById("addService");
     const addServiceModal = document.getElementById("addServiceModal");
     const addServiceModalClose = document.getElementById("addServiceModalClose");
     
     addServiceButton.addEventListener("click", () => {
         addServiceModal.classList.add("modal-active");
+        document.getElementById("createName").focus();
     });
     
     addServiceModalClose.addEventListener("click", () => {
         addServiceModal.classList.remove("modal-active");
+    });
+    
+    // Get the modal to update a Service
+    const updateServiceButton = document.querySelectorAll(".updateService");
+    const updateServiceModal = document.getElementById("updateServiceModal");
+    const updateServiceModalClose = document.getElementById("updateServiceModalClose");
+    const updateServiceForm = document.getElementById("updateForm");
+    
+    updateServiceButton.forEach(button => {
+        button.addEventListener("click", () => {
+            updateServiceModal.classList.add("modal-active");
+            updateServiceForm.action = `/Services/Update/${button.dataset.serviceid}`;
+            document.getElementById("updateName").focus();
+        });
+    });
+    
+    updateServiceModalClose.addEventListener("click", () => {
+        updateServiceModal.classList.remove("modal-active");
+    });
+    
+    //Pressing Escape closes the modals
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            addServiceModal.classList.remove("modal-active");
+            updateServiceModal.classList.remove("modal-active");
+        }
     });
 </script>
