@@ -1,18 +1,123 @@
 @model List<Site>
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      
+<div class="container modal-layout" id="addSiteModal">
+    <h1 class="text-primary">Entrez le nom du Site</h1>
+    <form method="post" action="/Sites/Add">
+        <div class="mb-3">
+            <label for="" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="City" id="createSiteName">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Description</label>
+            <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger" id="addSiteModalClose">Annuler</button>
+            <button type="submit" class="btn btn-primary" asp-controller="Sites" asp-action="Add">Ajouter</button>
+        </div>
+    </form>
 </div>
-</body>
-</html>
+
+<div class="container modal-layout" id="updateSiteModal">
+    <h1 class="text-primary">Modifier le site</h1>
+    <form method="post" action="/Sites/Add" id="updateForm">
+        <div class="mb-3">
+            <label for="" class="form-label">Ville</label>
+            <input type="text" class="form-control" name="City" id="updateCity">
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Description</label>
+            <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-danger" id="updateSiteModalClose">Annuler</button>
+            <button type="submit" class="btn btn-success">Sauvegarder</button>
+        </div>
+    </form>
+</div>
+
+<div class="container wrapper">
+    <div class="my-3 d-flex justify-content-between align-items-center">
+        <h1>Les Sites :</h1>
+        <button class="btn btn-primary" id="addSite">+ Ajouter un Site</button>
+    </div>
+
+    <div class="grid-layout threeColumns">
+        @foreach (var site in Model)
+        {
+            <div class="sm-card d-flex gap-3 flex-column">
+                <div class="d-flex justify-content-between align-items-center gap-3">
+                    <a href="/Sites/Details/@site.SiteId" class="text-primary fw-bold sm-card-title d-flex align-items-center gap-2">
+                        @site.City
+                        @if (@site.Description != null)
+                        {
+                            <span class="bg-primary p-1 rounded-2 text-white" style="font-size: 11px">@site.Description</span>
+                        }
+                    </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-end">
+                    <span class="text-secondary fst-italic text-truncate">@site.Employees.Count().ToString() employés</span>
+
+                    <form method="post" action="/Sites/Delete/@site.SiteId" class="btn-group">
+
+                        <button type="button" class="btn btn-secondary updateSite" data-siteid="@site.SiteId">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script defer>
+    // Get the modal to create a Site
+    const addSiteButton = document.getElementById("addSite");
+    const addSiteModal = document.getElementById("addSiteModal");
+    const addSiteModalClose = document.getElementById("addSiteModalClose");
+    
+    addSiteButton.addEventListener("click", () => {
+        addSiteModal.classList.add("modal-active");
+        document.getElementById("createSiteName").focus();
+    });
+    
+    addSiteModalClose.addEventListener("click", () => {
+        addSiteModal.classList.remove("modal-active");
+    });
+    
+    // Get the modal to update a Site
+    const updateSiteButtons = document.querySelectorAll(".updateSite");
+    const updateSiteModal = document.getElementById("updateSiteModal");
+    const updateSiteModalClose = document.getElementById("updateSiteModalClose");
+    const updateSiteForm = document.getElementById("updateForm");
+    
+    console.log(updateSiteButtons)
+    
+    updateSiteButtons.forEach(button => {
+            console.log(button.dataset.siteid);
+        button.addEventListener("click", () => {
+            updateSiteModal.classList.add("modal-active");
+            updateSiteForm.action = `/Sites/Update/${button.dataset.siteid}`;
+            document.getElementById("updateCity").focus();
+        });
+    });
+    
+    updateSiteModalClose.addEventListener("click", () => {
+        updateSiteModal.classList.remove("modal-active");
+    });
+    
+    //Pressing Escape closes the modals
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            addSiteModal.classList.remove("modal-active");
+            updateSiteModal.classList.remove("modal-active");
+        }
+    });
+</script>
