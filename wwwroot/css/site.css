@@ -107,6 +107,7 @@ html {
     bottom: -200px;
     animation: flicker 7.5s infinite reverse;
     scale: 2;
+    background: #0d6efd50;
 }
 
 @keyframes flicker {
@@ -188,11 +189,12 @@ html {
     transform: translateY(-100px) translateX(-50%) scale(0.8);
     transition: all 0.3s ease;
     pointer-events: none;
+    z-index: 999;
 }
 
 .modal-layout > h1 {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 800;
     margin-bottom: 0;
 }
 

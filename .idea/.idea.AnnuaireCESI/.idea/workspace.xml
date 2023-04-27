@@ -5,15 +5,18 @@
     <projectFile profileName="https">AnnuaireCESI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/SitesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Services/Details.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Sites/Index.cshtml" afterDir="false" />
+    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="Projects Files, Site controller init, CSS modifications">
+      <change afterPath="$PROJECT_DIR$/Views/Sites/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServicesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SitesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SitesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/SiteModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SiteModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Services/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Services/Details.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Services/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Services/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Sites/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Sites/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
@@ -22,8 +25,8 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,9 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/ServicesController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" root0="SKIP_HIGHLIGHTING" />
@@ -111,7 +117,7 @@
       <workItem from="1682316389901" duration="22010000" />
       <workItem from="1682514956781" duration="103000" />
       <workItem from="1682515067595" duration="799000" />
-      <workItem from="1682516129167" duration="6773000" />
+      <workItem from="1682516129167" duration="11456000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1682252483327</created>
@@ -211,7 +217,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682509320938</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Services Controller and views">
+      <created>1682580632737</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682580632737</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Projects Files, Site controller init, CSS modifications">
+      <created>1682580683054</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682580683054</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +265,8 @@
     <MESSAGE value="Added Clickable counters to navigatd through Emp, Services, Sites on the landing page" />
     <MESSAGE value="." />
     <MESSAGE value="Refined Employee model to add a temp password (Request)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refined Employee model to add a temp password (Request)" />
+    <MESSAGE value="Services Controller and views" />
+    <MESSAGE value="Projects Files, Site controller init, CSS modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projects Files, Site controller init, CSS modifications" />
   </component>
 </project>
