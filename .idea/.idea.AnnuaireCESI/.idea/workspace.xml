@@ -6,43 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/ServicesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/ViewModels/HomeViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Admin/Requests.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Services/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/SitesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Services/Details.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Sites/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnnuaireCESI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AnnuaireCESI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/HomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/AnnuaireDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ServiceModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ServiceModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/SiteModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SiteModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Auth/RequestAccess.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServicesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Services/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Services/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/AnnuaireCESI.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +32,9 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -63,24 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowGit.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editing.templates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowGit.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/evanosm/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/evanosm/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AnnuaireCESI: https">
     <configuration name="AnnuaireCESI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AnnuaireCESI.csproj" />
@@ -124,7 +108,10 @@
       <workItem from="1682179656854" duration="20784000" />
       <workItem from="1682252363552" duration="187000" />
       <workItem from="1682252560383" duration="14994000" />
-      <workItem from="1682316389901" duration="15561000" />
+      <workItem from="1682316389901" duration="22010000" />
+      <workItem from="1682514956781" duration="103000" />
+      <workItem from="1682515067595" duration="799000" />
+      <workItem from="1682516129167" duration="6773000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1682252483327</created>
@@ -147,7 +134,84 @@
       <option name="project" value="LOCAL" />
       <updated>1682255035240</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Navbar improvements, added darker background and text light, fixed width not suiting container">
+      <created>1682503537268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503537268</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Admin Controller : Access to admin-only pages (View requests, deny or accept them) with SMTP integration">
+      <created>1682503657427</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503657427</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Auth View &amp; Controller : Create &amp; Send request to get access to all features with error handling in a notification style">
+      <created>1682503805330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503805330</updated>
+    </task>
+    <task id="LOCAL-00007" summary="View Requests as admin">
+      <created>1682503822373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503822373</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added 'darker' var, responsive grid layout helper, a card and a modal 'component'">
+      <created>1682503870330</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503870330</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refined models to suit more the project (make employee list value nullable so when we create site or service we dont need to involve an employee)">
+      <created>1682503950911</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682503950911</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Init Service Controller &amp; View">
+      <created>1682509210254</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509210254</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Project files update">
+      <created>1682509264034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509264034</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added Clickable counters to navigatd through Emp, Services, Sites on the landing page">
+      <created>1682509295192</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509295192</updated>
+    </task>
+    <task id="LOCAL-00013" summary=".">
+      <created>1682509301609</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509301609</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Refined Employee model to add a temp password (Request)">
+      <created>1682509320938</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682509320938</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +234,17 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init" />
     <MESSAGE value="+Login page, +RequestAccess Model, page, +AuthController, Added isAdmin in Employee model, refined _Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="+Login page, +RequestAccess Model, page, +AuthController, Added isAdmin in Employee model, refined _Layout" />
+    <MESSAGE value="Navbar improvements, added darker background and text light, fixed width not suiting container" />
+    <MESSAGE value="Admin Controller : Access to admin-only pages (View requests, deny or accept them) with SMTP integration" />
+    <MESSAGE value="Auth View &amp; Controller : Create &amp; Send request to get access to all features with error handling in a notification style" />
+    <MESSAGE value="View Requests as admin" />
+    <MESSAGE value="added 'darker' var, responsive grid layout helper, a card and a modal 'component'" />
+    <MESSAGE value="Refined models to suit more the project (make employee list value nullable so when we create site or service we dont need to involve an employee)" />
+    <MESSAGE value="Init Service Controller &amp; View" />
+    <MESSAGE value="Project files update" />
+    <MESSAGE value="Added Clickable counters to navigatd through Emp, Services, Sites on the landing page" />
+    <MESSAGE value="." />
+    <MESSAGE value="Refined Employee model to add a temp password (Request)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refined Employee model to add a temp password (Request)" />
   </component>
 </project>

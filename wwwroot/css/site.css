@@ -86,11 +86,47 @@ html {
     flex-direction: column;
 }
 
+.blur-blob, .blur-blob-2 {
+    position: fixed;
+    top: 0;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    z-index: -1;
+    filter: blur(1000px);
+    background: #0d6efd;
+    opacity: .5;
+    border-radius: 50%;
+    animation: flicker 5s infinite;
+}
+
+.blur-blob-2 {
+    left: unset;
+    top: unset;
+    right: -100px;
+    bottom: -200px;
+    animation: flicker 7.5s infinite reverse;
+    scale: 2;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: .75;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: .75;
+    }
+}
+
 .hero-title {
     font-size: 48px;
     font-weight: 400;
     color: white;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .hero-title > span {
@@ -121,16 +157,18 @@ html {
     cursor: pointer;
 }
 
-.sm-card > h3 {
+.sm-card h3, .sm-card-title {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 0;
+    text-decoration: none;
 }
 
-.sm-card > span {
+.sm-card span {
     font-size: 16px;
     font-weight: 400;
     color: var(--bs-secondary);
+    pointer-events: none;
 }
 
 .modal-layout {
@@ -149,6 +187,7 @@ html {
     top: 25%;
     transform: translateY(-100px) translateX(-50%) scale(0.8);
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .modal-layout > h1 {
@@ -160,5 +199,6 @@ html {
 .modal-active {
     opacity: 1;
     transform: translateY(0) translateX(-50%) scale(1);
+    pointer-events: all;
 }
 
