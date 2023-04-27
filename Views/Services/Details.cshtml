@@ -8,31 +8,33 @@
     <h1 class="text-white fwt-bold">@Model.Name</h1>
     <span class="text-secondary fst-italic p-1 rounded-2" style="background:var(--darker);">@Model.Employees.Count().ToString() employés dans ce service</span>
     @* Faire une table avec les employés *@
-    <table class="table table-dark table-hover mt-3 rounded-3" style="max-width: 100%">
-        <thead>
-        <tr>
-            <th class="bg-primary">Nom</th>
-            <th class="bg-primary">Prénom</th>
-            <th class="bg-primary">Service</th>
-            <th class="bg-primary">Tél. Fixe</th>
-            <th class="bg-primary">Mobile</th>
-            <th class="bg-primary">Mail</th>
-            <th class="bg-primary">Site</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var employee in Model.Employees)
-        {
-            <tr style="transition: all .2s ease">
-                <td>@employee.LastName</td>
-                <td>@employee.FirstName</td>
-                <td>@employee.Service.Name</td>
-                <td>@employee.Phone</td>
-                <td>@employee.Mobile</td>
-                <td>@employee.Email</td>
-                <td>@employee.Site.City</td>
+    <div style="overflow: scroll">
+        <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 600px">
+            <thead>
+            <tr>
+                <th class="bg-primary">Nom</th>
+                <th class="bg-primary">Prénom</th>
+                <th class="bg-primary">Service</th>
+                <th class="bg-primary">Tél. Fixe</th>
+                <th class="bg-primary">Mobile</th>
+                <th class="bg-primary">Mail</th>
+                <th class="bg-primary">Site</th>
             </tr>
-        }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr style="transition: all .2s ease">
+                    <td>@employee.LastName</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.Service.Name</td>
+                    <td>@employee.Phone</td>
+                    <td>@employee.Mobile</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.Site.City</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
 </div>

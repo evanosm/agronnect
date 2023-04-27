@@ -43,16 +43,16 @@
         {
             <div class="sm-card d-flex gap-3 flex-column">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="/Services/Details/@service.ServiceId" class="text-primary fw-bold sm-card-title">@service.Name</a>
-
-                    <button type="submit" class="btn btn-outline-secondary updateService" data-serviceid="@service.ServiceId">
-                        <i class="fas fa-pen"></i>
-                    </button>
+                    <a href="/Services/Details/@service.ServiceId" class="text-primary fw-bold sm-card-title" id="name-@service.ServiceId" data-name="@service.Name">@service.Name</a>
                 </div>
                 <div class="d-flex justify-content-between align-items-end">
                     <span class="text-secondary fst-italic">@service.Employees.Count().ToString() employés</span>
-                    <form method="post" action="/Services/Delete/@service.ServiceId">
-                        <button type="submit" class="btn btn-outline-danger">
+                    <form method="post" action="/Services/Delete/@service.ServiceId" class="btn-group">
+
+                        <button type="button" class="btn btn-secondary updateService" data-serviceid="@service.ServiceId" data-name="@service.Name">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                        <button type="submit" class="btn btn-danger">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
@@ -69,6 +69,7 @@
     const addServiceModalClose = document.getElementById("addServiceModalClose");
     
     addServiceButton.addEventListener("click", () => {
+        let editNameValue = document.getElementById("name-");
         addServiceModal.classList.add("modal-active");
         document.getElementById("createName").focus();
     });
@@ -87,7 +88,9 @@
         button.addEventListener("click", () => {
             updateServiceModal.classList.add("modal-active");
             updateServiceForm.action = `/Services/Update/${button.dataset.serviceid}`;
+            document.getElementById("updateName").value = button.dataset.name;
             document.getElementById("updateName").focus();
+            
         });
     });
     
