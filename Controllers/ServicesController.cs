@@ -1,5 +1,6 @@
 using AnnuaireCESI.Data;
 using AnnuaireCESI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,7 +21,8 @@ public class ServicesController : Controller
         var services = await _context.Services.Include(s => s.Employees).ToListAsync();
         return View(services);
     }
-
+    
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Add(string Name)
     {
@@ -33,6 +35,7 @@ public class ServicesController : Controller
         return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Update(int Id, string Name)
     {
@@ -47,6 +50,7 @@ public class ServicesController : Controller
         return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Delete(int Id)
     {

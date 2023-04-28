@@ -16,8 +16,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/evanosm/Documents/dev/dotnet/AnnuaireCESI
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Admin/Requests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Auth/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9DaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Auth/Login.cshtml]
@@ -26,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Auth/RequestAccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aC9SZXF1ZXN0QWNjZXNzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Employees/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVzL0FkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Employees/Details.cshtml]

@@ -1,68 +1,81 @@
 @model List<Service>
+@using System.Security.Claims
+
 
 @{
     Layout = "_Layout";
 }
+@if (@User.IsInRole("Admin"))
+{
+    <div class="container modal-layout" id="addServiceModal">
+        <h1 class="text-primary">Entrez le nom du service</h1>
+        <form method="post" action="/Services/Add">
+            <div class="mb-3">
+                <label for="" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="Name" id="createName">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" id="addServiceModalClose">Annuler</button>
+                <button type="submit" class="btn btn-primary" asp-controller="Services" asp-action="Add">Ajouter</button>
+            </div>
+        </form>
+    </div>
 
-<div class="container modal-layout" id="addServiceModal">
-    <h1 class="text-primary">Entrez le nom du service</h1>
-    <form method="post" action="/Services/Add">
-        <div class="mb-3">
-            <label for="" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="Name" id="createName">
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-outline-danger" id="addServiceModalClose">Annuler</button>
-            <button type="submit" class="btn btn-primary" asp-controller="Services" asp-action="Add">Ajouter</button>
-        </div>
-    </form>
-</div>
-
-<div class="container modal-layout" id="updateServiceModal">
-    <h1 class="text-primary">Entrez le nom du service</h1>
-    <form method="post" action="/Services/Add" id="updateForm">
-        <div class="mb-3">
-            <label for="" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="Name" id="updateName">
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-outline-danger" id="updateServiceModalClose">Annuler</button>
-            <button type="submit" class="btn btn-success">Sauvegarder</button>
-        </div>
-    </form>
-</div>
-
+    <div class="container modal-layout" id="updateServiceModal">
+        <h1 class="text-primary">Entrez le nom du service</h1>
+        <form method="post" action="/Services/Add" id="updateForm">
+            <div class="mb-3">
+                <label for="" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="Name" id="updateName">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" id="updateServiceModalClose">Annuler</button>
+                <button type="submit" class="btn btn-success">Sauvegarder</button>
+            </div>
+        </form>
+    </div>
+}
 <div class="container wrapper">
     <div class="my-3 d-flex justify-content-between align-items-center">
         <h1>Les Services :</h1>
-        <button class="btn btn-primary" id="addService">+ Ajouter un service</button>
+        @if (@User.IsInRole("Admin"))
+        {
+            <button class="btn btn-primary" id="addService">+ Ajouter un service</button>
+        }
     </div>
 
     <div class="grid-layout threeColumns">
         @foreach (var service in Model)
         {
-            <div class="sm-card d-flex gap-3 flex-column">
+            <a href="/Services/Details/@service.ServiceId" class="sm-card d-flex gap-3 flex-column">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="/Services/Details/@service.ServiceId" class="text-primary fw-bold sm-card-title" id="name-@service.ServiceId" data-name="@service.Name">@service.Name</a>
+                    <div class="text-primary fw-bold sm-card-title" id="name-@service.ServiceId" data-name="@service.Name">@service.Name</div>
                 </div>
                 <div class="d-flex justify-content-between align-items-end">
-                    <span class="text-secondary fst-italic">@service.Employees.Count().ToString() employés</span>
-                    <form method="post" action="/Services/Delete/@service.ServiceId" class="btn-group">
+                    <span class="text-secondary fst-italic">@service.Employees.Count().ToString() collaborateurs</span>
 
-                        <button type="button" class="btn btn-secondary updateService" data-serviceid="@service.ServiceId" data-name="@service.Name">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <form method="post" action="/Services/Delete/@service.ServiceId" class="btn-group">
+
+                            <button type="button" class="btn btn-secondary updateService" data-serviceid="@service.ServiceId" data-name="@service.Name">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    }
                 </div>
-            </div>
+            </a>
         }
     </div>
 </div>
 
-<script defer>
+
+@if (@User.IsInRole("Admin"))
+{
+    <script defer>
     // Get the modal to create a Service
     const addServiceButton = document.getElementById("addService");
     const addServiceModal = document.getElementById("addServiceModal");
@@ -106,3 +119,4 @@
         }
     });
 </script>
+}

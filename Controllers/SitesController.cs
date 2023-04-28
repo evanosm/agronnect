@@ -1,5 +1,6 @@
 using AnnuaireCESI.Data;
 using AnnuaireCESI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ public class SitesController : Controller
         return View(sites);
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Add(string City, string Description)
     {
@@ -33,6 +35,7 @@ public class SitesController : Controller
         return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Update(int Id, string City, string Description)
     {
@@ -49,6 +52,7 @@ public class SitesController : Controller
         return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<IActionResult> Delete(int Id)
     {
@@ -66,10 +70,10 @@ public class SitesController : Controller
     [HttpGet]
     public async Task<IActionResult> Details(int Id)
     {
-        var site = await _context.Sites
+        var site = _context.Sites
             .Include(s => s.Employees)
-            .ThenInclude(e => e.Site)
-            .FirstOrDefaultAsync(s => s.SiteId == Id);
+            .ThenInclude(e => e.Service)
+            .FirstOrDefault(s => s.SiteId == Id);
         if (site == null)
         {
             return NotFound();

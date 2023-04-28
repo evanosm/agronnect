@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using AnnuaireCESI.Models;
 using AnnuaireCESI.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AnnuaireCESI.Controllers
 {
@@ -16,55 +17,126 @@ namespace AnnuaireCESI.Controllers
 
         //GET: Employees
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Page = 1)
         {
-            //get employees from database
-            var employees = await _context.Employees.ToListAsync();
-            return View(employees);
-        }
+            var empPerPage = 10;
+            var employees = await _context.Employees
+                .Include(e => e.Site)
+                .Include(e => e.Service)
+                .OrderBy(e => e.LastName)
+                .Skip((Page - 1) * empPerPage)
+                .Take(empPerPage)
+                .ToListAsync();
 
-        //POST: Employees/Create
-        [HttpGet]
-        public async Task<IActionResult> Add()
-        {
-            var services = await _context.Services.ToListAsync();
             var sites = await _context.Sites.ToListAsync();
+            var services = await _context.Services.ToListAsync();
 
-            var viewModel = new AddEmployeeViewModel()
+            var Data = new EmployeeIndexViewModel()
             {
+                Employees = employees,
+                Sites = sites,
                 Services = services,
-                Sites = sites
             };
-
-            return View(viewModel);
+            return View(Data);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Add(AddEmployeeViewModel newEmployee)
         {
-            Console.WriteLine("NEW EMPLOYEE SERVICE & SITE");
-            Console.WriteLine(newEmployee.ServiceId);
-            Console.WriteLine(newEmployee.SiteId);
-                
             var newService = await _context.Services.FindAsync(newEmployee.ServiceId);
             var newSite = await _context.Sites.FindAsync(newEmployee.SiteId);
             
-            var employee = new Employee()
-            {
-                EmployeeId = Guid.NewGuid(),
-                FirstName = newEmployee.FirstName,
-                LastName = newEmployee.LastName,
-                Email = newEmployee.Email,
-                Phone = newEmployee.Phone,
-                Mobile = newEmployee.Mobile,
-                Service = newService,
-                Site = newSite
-            };
+            var emailExist = await _context.Employees.AnyAsync(e => e.Email == newEmployee.Email);
 
-            await _context.Employees.AddAsync(employee);
+            if (!emailExist)
+            {
+                var employee = new Employee()
+                {
+                    EmployeeId = Guid.NewGuid(),
+                    FirstName = newEmployee.FirstName,
+                    LastName = newEmployee.LastName,
+                    Email = newEmployee.Email,
+                    Phone = newEmployee.Phone,
+                    Mobile = newEmployee.Mobile,
+                    Service = newService,
+                    Site = newSite
+                };
+
+                await _context.Employees.AddAsync(employee);
+                await _context.SaveChangesAsync();
+
+                ViewBag.Success = "L'employé a bien été ajouté";
+                return View("Index");
+            }
+            else
+            {
+                ViewBag.Error = "L'employé avec cette adresse mail existe déjà";
+                return View("Index");
+            }
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Update(UpdateEmployeeViewModel updatedEmployee)
+        {
+            
+            var newService = await _context.Services.FindAsync(updatedEmployee.ServiceId);
+            var newSite = await _context.Sites.FindAsync(updatedEmployee.SiteId);
+            var employee = await _context.Employees.Include(e => e.Service).Include(e => e.Site)
+                .FirstOrDefaultAsync(e => e.Email == updatedEmployee.Email);
+
+            if (employee != null)
+            {
+                employee.FirstName = updatedEmployee.FirstName;
+                employee.LastName = updatedEmployee.LastName;
+                employee.Email = updatedEmployee.Email;
+                employee.Phone = updatedEmployee.Phone;
+                employee.Mobile = updatedEmployee.Mobile;
+                employee.Site = newSite;
+                employee.Service = newService;
+
+
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+            ViewBag.Error = "L'employé n'a pas pu être modifié";
+            return View("Index");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            Console.WriteLine("Delete: " + id);
+            var employee = await _context.Employees.FindAsync(id);
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Add");
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> Search(string search)
+        {
+            var employees = await _context.Employees
+                .Include(e => e.Site)
+                .Include(e => e.Service)
+                .Where(e => e.FirstName.Contains(search) || e.LastName.Contains(search) || e.Email.Contains(search) || e.Phone.Contains(search) || e.Mobile.Contains(search) || e.Service.Name.Contains(search) || e.Site.City.Contains(search))
+                .ToListAsync();
+
+            var sites = await _context.Sites.ToListAsync();
+            var services = await _context.Services.ToListAsync();
+
+            var Data = new EmployeeIndexViewModel()
+            {
+                Employees = employees,
+                Sites = sites,
+                Services = services,
+            };
+            ViewBag.Search = search;
+            return View("Index", Data);
         }
     }
 }

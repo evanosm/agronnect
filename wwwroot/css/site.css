@@ -12,6 +12,10 @@ html {
     }
 }
 
+td {
+    vertical-align: center;
+}
+
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Grid */
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -149,13 +153,16 @@ html {
     margin: 0 auto;
     text-decoration: none;
     box-shadow: 0 0 0px 0px #0D6EFD00;
-    transition: box-shadow 0.3s ease-in;
+    transition: box-shadow 0.3s ease-in,
+                transform 0.3s ease-in;
 }
 
 .sm-card:hover {
     box-shadow: 0 0 100px 0px #0D6EFD90;
-    transition: box-shadow 0.5s ease-out;
+    transition: box-shadow 0.5s ease-out,
+                transform 0.5s ease-out;
     cursor: pointer;
+    transform: scale(1.01);
 }
 
 .sm-card h3, .sm-card-title {
@@ -185,8 +192,8 @@ html {
     margin: 0 auto;
     opacity: 0;
     left: 50%;
-    top: 25%;
-    transform: translateY(-100px) translateX(-50%) scale(0.8);
+    top: 50%;
+    transform: translateY(-100px) translateX(-50%) scale(0.8) rotateX(-90deg);
     transition: all 0.3s ease;
     pointer-events: none;
     z-index: 999;
@@ -200,7 +207,23 @@ html {
 
 .modal-active {
     opacity: 1;
-    transform: translateY(0) translateX(-50%) scale(1);
+    transform: translateY(-50%) translateX(-50%) scale(1) rotateX(0deg);
     pointer-events: all;
+}
+
+.frost {
+    backdrop-filter: blur(100px);
+    background: #18181A70;
+    border: solid 1px #ffffff70;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
 }
 

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -25,7 +26,7 @@
                 <ul class="navbar-nav flex-grow-1">
 
                     <li class="nav-item">
-                        <a class="nav-link text-light" asp-area="" asp-controller="Employees" asp-action="Index">Salariés</a>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Employees" asp-action="Index">Collaborateurs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" asp-area="" asp-controller="Services" asp-action="Index">Services</a>
@@ -36,7 +37,29 @@
 
                 </ul>
             </div>
-            <a class="nav-link btn btn-primary text-light" asp-area="" asp-controller="Auth" asp-action="Login">Se connecter</a>
+            @if (@User.IsInRole("Admin"))
+            {
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle avatar" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-md-end dropdown-menu-start" aria-labelledby="dropdownMenuButton1" style="background:var(--darker);">
+                        <li>
+                            <a class="dropdown-item " asp-controller="Admin" asp-action="Index">Index</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" asp-controller="Auth" asp-action="ChangePassword">Changer de mot de passe</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" asp-controller="Auth" asp-action="Logout">Déconnexion</a>
+                        </li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <a class="nav-link btn btn-primary text-light" asp-area="" asp-controller="Auth" asp-action="Login">Se connecter</a>
+            }
         </div>
     </nav>
 </div>

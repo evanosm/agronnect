@@ -1,17 +1,28 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Npgsql.EntityFrameworkCore.PostgreSQL;
-using System;
 using AnnuaireCESI.Data;
-using AnnuaireCESI.Models;
+using AnnuaireCESI.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IHashService, HashService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AnnuaireDbContext>(
     options => options.UseNpgsql(
         "Host=localhost;Database=annuaire-dotnet;Username=postgres;Password=postgres;Port=5432"));
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Auth/Login";
+        options.Cookie.Name = "AgronnectAuthCookie";
+    });
+
+builder.Services.AddMvc();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,12 +33,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCookiePolicy();
 
 app.MapControllerRoute(
     name: "default",

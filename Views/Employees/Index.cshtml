@@ -1,13 +1,290 @@
-@model List<AnnuaireCESI.Models.Employee>
+@model EmployeeIndexViewModel
 
-<h1>Liste des employés :</h1>
+@using System.Security.Claims
+@{
+    var nbOfPages = (int)Math.Ceiling((double)Model.Employees.Count() / 10);
+    Layout = "_Layout";
+    var search = "";
+}
+@if (@User.IsInRole("Admin"))
+{
+    // Create Employee Modal
+    <div class="container modal-layout" id="addEmployeeModal">
+        <h1 class="text-primary">Entrez le nom du employee</h1>
+        <form method="post" action="/Employees/Add">
+            <div class="mb-3">
+                <label for="" class="form-label">Prénom</label>
+                <input type="text" class="form-control" name="FirstName" id="FirstName">
+            </div>
 
-<div>
-    @foreach(var employee in Model)
-    {
+            <div class="mb-3">
+                <label for="" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="LastName" id="LastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Adresse Email</label>
+                <input type="email" class="form-control" name="Email" id="Email">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Téléphone Fixe</label>
+                <input type="text" class="form-control" name="Phone" id="Phone">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Téléphone Mobile</label>
+                <input type="text" class="form-control" name="Mobile" id="Mobile">
+            </div>
+
+            <div class="mb-3">
+                <label>Service</label>
+                <select class="form-select form-control" name="ServiceId" id="ServiceId">
+                    @foreach (var service in Model.Services)
+                    {
+                        <option value="@service.ServiceId">@service.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Site</label>
+                <select class="form-select form-control" name="SiteId" id="SiteId">
+                    @foreach (var site in Model.Sites)
+                    {
+                        <option value="@site.SiteId">@site.City</option>
+                    }
+                </select>
+            </div>
+
+            <div class="d-flex w-100 justify-content-end">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" id="addEmployeeModalClose">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    // Update Employee Modal
+    <div class="container modal-layout" id="updateEmployeeModal">
+        <h1 class="text-primary">Entrez le nom du employee</h1>
+        <form method="post" action="/Employees/Update/" id="updateForm">
+            <div class="mb-3">
+                <label for="" class="form-label">Prénom</label>
+                <input type="text" class="form-control" name="FirstName" id="updateFirstName">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="LastName" id="updateLastName">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Adresse Email</label>
+                <input type="email" class="form-control" name="Email" id="updateEmail">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Téléphone Fixe</label>
+                <input type="text" class="form-control" name="Phone" id="updatePhone">
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Téléphone Mobile</label>
+                <input type="text" class="form-control" name="Mobile" id="updateMobile">
+            </div>
+
+            <div class="mb-3">
+                <label>Service</label>
+                <select class="form-select form-control" name="ServiceId" id="updateServiceId">
+                    @foreach (var service in Model.Services)
+                    {
+                        <option value="@service.ServiceId">@service.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Site</label>
+                <select class="form-select form-control" name="SiteId" id="updateSiteId">
+                    @foreach (var site in Model.Sites)
+                    {
+                        <option value="@site.SiteId">@site.City</option>
+                    }
+                </select>
+            </div>
+
+            <div class="d-flex w-100 justify-content-end">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" id="updateEmployeeModalClose">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </div>
+            </div>
+        </form>
+    </div>
+}
+<div class="container wrapper">
+    <div class="my-3 d-flex justify-content-between align-items-start">
         <div>
-            <h2>@employee.FirstName</h2>
-            <p>@employee.Email</p>
+
+            <h1 class="text-white fwt-bold">Tous les collaborateurs</h1>
+            <span class="text-secondary fst-italic p-1 rounded-2" style="background:var(--darker);">@Model.Employees.Count().ToString() collaborateurs au total</span>
+        </div>
+        @if (@User.IsInRole("Admin"))
+        {
+            <button class="btn btn-primary" id="addEmployee">+ Ajouter un collaborateur</button>
+        }
+    </div>
+    @if (ViewBag.Success != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @ViewBag.Success
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
+    
+    @* Searchbar *@
+    <div class="input-group col-12 col-md-6">
+        <div class="form-outline">
+            <input type="search" placeholder="Rechercher..." class="form-control text-white" style="border-radius: 100px 0px 0px 100px; background:var(--darker);" />
+        </div>
+        @* getvalue of input search on asp-route-search *@
+        <button type="button" class="btn btn-primary" style="border-radius: 0px 100px 100px 0px" asp-controller="Employees" asp-action="Search" asp-route-search="@search">
+            <i class="fas fa-search"></i>
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    
+    @* Faire une table avec les collaborateurs *@
+    <div style="overflow: scroll">
+        <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 980px">
+            <thead>
+            <tr>
+                <th class="bg-primary">Nom</th>
+                <th class="bg-primary">Prénom</th>
+                <th class="bg-primary">Service</th>
+                <th class="bg-primary">Tél. Fixe</th>
+                <th class="bg-primary">Mobile</th>
+                <th class="bg-primary">Mail</th>
+                <th class="bg-primary">Site</th>
+                @if (@User.IsInRole("Admin"))
+                {
+                    <th class="bg-primary">Actions</th>
+                }
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr style="transition: all .2s ease">
+                    <td>@employee.LastName</td>
+                    <td>@employee.FirstName</td>
+                    <td>
+                        <a href="/Services/Details/@employee.Service.ServiceId">@employee.Service.Name</a>
+                    </td>
+                    <td>@employee.Phone</td>
+                    <td>@employee.Mobile</td>
+                    <td>@employee.Email</td>
+                    <td>
+                        <a href="/Site/Details/@employee.Site.SiteId">@employee.Site.City</a>
+                    </td>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <div class="btn-group">
+                                <form method="post" action="/Employees/Delete/@employee.EmployeeId">
+                                    <button type="button" class="btn btn-secondary updateEmployee"
+                                            data-employeeid="@employee.EmployeeId" data-firstname="@employee.FirstName" 
+                                            data-lastname="@employee.LastName" data-email="@employee.Email" 
+                                            data-phone="@employee.Phone" data-mobile="@employee.Mobile"
+                                            data-serviceid="@employee.Service.ServiceId" data-siteid="@employee.Site.SiteId">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </button>
+                                    <button type="submit" class="btn btn-danger" asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.EmployeeId">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="mt-3 d-flex col-12 gap-3 flex-wrap justify-content-center align-items-center">
+        @for (int i = 1; i <= nbOfPages; i++)
+        {
+            <a href="/Employees/Index/@i" class="btn btn-primary">@i</a>
+        }
+    </div>
 </div>
+
+
+@if (@User.IsInRole("Admin"))
+{
+    <script defer>
+    // Get the modal to create a employee
+    const addEmployeeButton = document.getElementById("addEmployee");
+    const addEmployeeModal = document.getElementById("addEmployeeModal");
+    const addEmployeeModalClose = document.getElementById("addEmployeeModalClose");
+    
+    addEmployeeButton.addEventListener("click", () => {
+        let editNameValue = document.getElementById("name-");
+        addEmployeeModal.classList.add("modal-active");
+        document.getElementById("createName").focus();
+    });
+    
+    addEmployeeModalClose.addEventListener("click", () => {
+        addEmployeeModal.classList.remove("modal-active");
+    });
+    
+    // Get the modal to update a employee
+    const updateEmployeeButton = document.querySelectorAll(".updateEmployee");
+    const updateEmployeeModal = document.getElementById("updateEmployeeModal");
+    const updateEmployeeModalClose = document.getElementById("updateEmployeeModalClose");
+    const updateEmployeeForm = document.getElementById("updateForm");
+
+    updateEmployeeButton.forEach(button => {
+        button.addEventListener("click", () => {
+            updateEmployeeModal.classList.add("modal-active");
+            updateEmployeeForm.action = `/employees/Update/${button.dataset.employeeid}`;
+            document.getElementById("updateFirstName").focus();
+            document.getElementById("updateFirstName").value = button.dataset.firstname;
+            document.getElementById("updateLastName").value = button.dataset.lastname;
+            document.getElementById("updateEmail").value = button.dataset.email;
+            document.getElementById("updatePhone").value = button.dataset.phone;
+            document.getElementById("updateMobile").value = button.dataset.mobile;
+//preselect the right service from select option
+            const serviceSelect = document.getElementById("updateService");
+            for (let i = 0; i < serviceSelect.options.length; i++) {
+                if (serviceSelect.options[i].value === button.dataset.serviceid) {
+                    serviceSelect.selectedIndex = i;
+                    break;
+                }
+            }
+//preselect the right site from select option
+            const siteSelect = document.getElementById("updateSite");
+            for (let i = 0; i < siteSelect.options.length; i++) {
+                if (siteSelect.options[i].value === button.dataset.siteid) {
+                    siteSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        });
+    });
+
+    updateEmployeeModalClose.addEventListener("click", () => {
+        updateEmployeeModal.classList.remove("modal-active");
+    });
+
+    //Pressing Escape closes the modals
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            addEmployeeModal.classList.remove("modal-active");
+            updateEmployeeModal.classList.remove("modal-active");
+        }
+    });
+</script>
+}

@@ -1,15 +1,15 @@
 @model Site
-
+@using System.Security.Claims;
 @{
     Layout = "_Layout";
 }
 
 <div class="container wrapper">
     <h1 class="text-white fwt-bold">@Model.City</h1>
-    <span class="text-secondary fst-italic p-1 rounded-2" style="background:var(--darker);">@Model.Employees.Count().ToString() employés dans ce service</span>
-    @* Faire une table avec les employés *@
+    <span class="text-secondary fst-italic p-1 rounded-2" style="background:var(--darker);">@Model.Employees.Count().ToString() collaborateurs dans ce service</span>
+    @* Faire une table avec les collaborateurs *@
     <div style="overflow: scroll">
-        <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 600px">
+        <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 980px">
             <thead>
             <tr>
                 <th class="bg-primary">Nom</th>
@@ -19,6 +19,10 @@
                 <th class="bg-primary">Mobile</th>
                 <th class="bg-primary">Mail</th>
                 <th class="bg-primary">Site</th>
+                @if (@User.IsInRole("Admin"))
+                {
+                    <th class="bg-primary">Actions</th>
+                }
             </tr>
             </thead>
             <tbody>
@@ -27,11 +31,24 @@
                 <tr style="transition: all .2s ease">
                     <td>@employee.LastName</td>
                     <td>@employee.FirstName</td>
-                    <td>@employee.Service.Name</td>
+                    <td><a href="/Services/Details/@employee.Service.ServiceId">@employee.Service.Name</a></td>
                     <td>@employee.Phone</td>
                     <td>@employee.Mobile</td>
                     <td>@employee.Email</td>
                     <td>@employee.Site.City</td>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-primary" asp-controller="Employees" asp-action="Update" asp-route-id="@employee.EmployeeId">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <button class="btn btn-danger" asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.EmployeeId">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    }
                 </tr>
             }
             </tbody>

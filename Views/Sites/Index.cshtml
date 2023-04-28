@@ -4,80 +4,93 @@
     Layout = "_Layout";
 }
 
-<div class="container modal-layout" id="addSiteModal">
-    <h1 class="text-primary">Entrez le nom du Site</h1>
-    <form method="post" action="/Sites/Add">
-        <div class="mb-3">
-            <label for="" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="City" id="createSiteName">
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">Description</label>
-            <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-outline-danger" id="addSiteModalClose">Annuler</button>
-            <button type="submit" class="btn btn-primary" asp-controller="Sites" asp-action="Add">Ajouter</button>
-        </div>
-    </form>
-</div>
+@if (@User.IsInRole("Admin"))
+{
+    // MODALS
+    <div class="container modal-layout" id="addSiteModal">
+        <h1 class="text-primary">Entrez le nom du Site</h1>
+        <form method="post" action="/Sites/Add">
+            <div class="mb-3">
+                <label for="" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="City" id="createSiteName">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Description</label>
+                <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" id="addSiteModalClose">Annuler</button>
+                <button type="submit" class="btn btn-primary" asp-controller="Sites" asp-action="Add">Ajouter</button>
+            </div>
+        </form>
+    </div>
 
-<div class="container modal-layout" id="updateSiteModal">
-    <h1 class="text-primary">Modifier le site</h1>
-    <form method="post" action="/Sites/Add" id="updateForm">
-        <div class="mb-3">
-            <label for="" class="form-label">Ville</label>
-            <input type="text" class="form-control" name="City" id="updateCity">
-        </div>
-        <div class="mb-3">
-            <label for="" class="form-label">Description</label>
-            <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
-        </div>
-        <div class="btn-group">
-            <button type="button" class="btn btn-outline-danger" id="updateSiteModalClose">Annuler</button>
-            <button type="submit" class="btn btn-success">Sauvegarder</button>
-        </div>
-    </form>
-</div>
+    <div class="container modal-layout" id="updateSiteModal">
+        <h1 class="text-primary">Modifier le site</h1>
+        <form method="post" action="/Sites/Add" id="updateForm">
+            <div class="mb-3">
+                <label for="" class="form-label">Ville</label>
+                <input type="text" class="form-control" name="City" id="updateCity">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Description</label>
+                <textarea class="form-control" name="Description" id="createSiteDescription"></textarea>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-danger" id="updateSiteModalClose">Annuler</button>
+                <button type="submit" class="btn btn-success">Sauvegarder</button>
+            </div>
+        </form>
+    </div>
+}
 
+@* MAIN PAGE *@
 <div class="container wrapper">
     <div class="my-3 d-flex justify-content-between align-items-center">
         <h1>Les Sites :</h1>
-        <button class="btn btn-primary" id="addSite">+ Ajouter un Site</button>
+        @if (@User.IsInRole("Admin"))
+        {
+            <button class="btn btn-primary" id="addSite">+ Ajouter un Site</button>
+        }
     </div>
 
     <div class="grid-layout threeColumns">
         @foreach (var site in Model)
         {
-            <div class="sm-card d-flex gap-3 flex-column">
+            <a href="/Sites/Details/@site.SiteId" class="sm-card d-flex gap-3 flex-column">
                 <div class="d-flex justify-content-between align-items-center gap-3">
-                    <a href="/Sites/Details/@site.SiteId" class="text-primary fw-bold sm-card-title d-flex align-items-center gap-2">
+                    <div class="text-primary fw-bold sm-card-title d-flex align-items-center gap-2">
                         @site.City
                         @if (@site.Description != null)
                         {
                             <span class="bg-primary p-1 rounded-2 text-white" style="font-size: 11px">@site.Description</span>
                         }
-                    </a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-end">
                     <span class="text-secondary fst-italic text-truncate">@site.Employees.Count().ToString() employés</span>
+                    @if (@User.IsInRole("Admin"))
+                    {
+                        <form method="post" action="/Sites/Delete/@site.SiteId" class="btn-group">
 
-                    <form method="post" action="/Sites/Delete/@site.SiteId" class="btn-group">
-
-                        <button type="button" class="btn btn-secondary updateSite" data-siteid="@site.SiteId">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                            <button type="button" class="btn btn-secondary updateSite" data-siteid="@site.SiteId">
+                                <i class="fas fa-pen"></i>
+                            </button>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    }
                 </div>
-            </div>
+            </a>
         }
     </div>
 </div>
 
-<script defer>
+@* MODAL UTILITY SCRIPT *@
+@if (@User.IsInRole("Admin"))
+{
+    <script defer>
     // Get the modal to create a Site
     const addSiteButton = document.getElementById("addSite");
     const addSiteModal = document.getElementById("addSiteModal");
@@ -121,3 +134,4 @@
         }
     });
 </script>
+}
