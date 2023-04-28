@@ -104,8 +104,8 @@ public class AuthController : Controller
     [HttpGet]
     public IActionResult ChangePassword()
     {
-    
-        if (ClaimsPrincipal.Current.Identity.IsAuthenticated)
+        // if user auth
+        if (User.Identity.IsAuthenticated)
         {
             return View();
         }

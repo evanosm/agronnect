@@ -4,7 +4,6 @@
 @{
     var nbOfPages = (int)Math.Ceiling((double)Model.Employees.Count() / 10);
     Layout = "_Layout";
-    var search = "";
 }
 @if (@User.IsInRole("Admin"))
 {
@@ -128,7 +127,14 @@
     <div class="my-3 d-flex justify-content-between align-items-start">
         <div>
 
-            <h1 class="text-white fwt-bold">Tous les collaborateurs</h1>
+            @if (Model.Search != null)
+            {
+                <h1 class="text-white">Les résultats pour : <span class="text-primary fw-bold">@Model.Search</span></h1>
+            }
+            else
+            {
+                <h1 class="text-white fwt-bold">Tous les collaborateurs</h1>
+            }
             <span class="text-secondary fst-italic p-1 rounded-2" style="background:var(--darker);">@Model.Employees.Count().ToString() collaborateurs au total</span>
         </div>
         @if (@User.IsInRole("Admin"))
@@ -143,85 +149,125 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-    
+
+    @if (Model.Search != null)
+    {
+        <span class="bg-primary rounded-pill mt-3 px-2 py-1">
+            @Model.Search
+            <a href="/Employees" class="text-white text-decoration-none">
+                <i class="fas fa-times"></i>
+            </a>
+        </span>
+    }
+
     @* Searchbar *@
-    <div class="input-group col-12 col-md-6">
+    <form method="get" action="/Employees/Search/" class="input-group col-12 col-md-6 mt-3" id="searchForm">
         <div class="form-outline">
-            <input type="search" placeholder="Rechercher..." class="form-control text-white" style="border-radius: 100px 0px 0px 100px; background:var(--darker);" />
+            <input type="search" placeholder="Rechercher..." name="Search" class="form-control text-white" style="border-radius: 100px 0px 0px 100px; background:var(--darker);"/>
         </div>
-        @* getvalue of input search on asp-route-search *@
-        <button type="button" class="btn btn-primary" style="border-radius: 0px 100px 100px 0px" asp-controller="Employees" asp-action="Search" asp-route-search="@search">
+
+        <button type="submit" class="btn btn-primary" style="border-radius: 0px 100px 100px 0px">
             <i class="fas fa-search"></i>
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-    
+        </button>
+    </form>
+
     @* Faire une table avec les collaborateurs *@
-    <div style="overflow: scroll">
-        <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 980px">
-            <thead>
-            <tr>
-                <th class="bg-primary">Nom</th>
-                <th class="bg-primary">Prénom</th>
-                <th class="bg-primary">Service</th>
-                <th class="bg-primary">Tél. Fixe</th>
-                <th class="bg-primary">Mobile</th>
-                <th class="bg-primary">Mail</th>
-                <th class="bg-primary">Site</th>
-                @if (@User.IsInRole("Admin"))
-                {
-                    <th class="bg-primary">Actions</th>
-                }
-            </tr>
-            </thead>
-            <tbody>
-            @foreach (var employee in Model.Employees)
-            {
-                <tr style="transition: all .2s ease">
-                    <td>@employee.LastName</td>
-                    <td>@employee.FirstName</td>
-                    <td>
-                        <a href="/Services/Details/@employee.Service.ServiceId">@employee.Service.Name</a>
-                    </td>
-                    <td>@employee.Phone</td>
-                    <td>@employee.Mobile</td>
-                    <td>@employee.Email</td>
-                    <td>
-                        <a href="/Site/Details/@employee.Site.SiteId">@employee.Site.City</a>
-                    </td>
+    @if (Model.Employees.Count() > 0)
+    {
+        <div style="overflow: scroll">
+            <table class="table table-dark table-hover mt-3 rounded-3" style="min-width: 980px">
+                <thead>
+                <tr>
+                    <th class="bg-primary">Nom</th>
+                    <th class="bg-primary">Prénom</th>
+                    <th class="bg-primary">Service</th>
+                    <th class="bg-primary">Tél. Fixe</th>
+                    <th class="bg-primary">Mobile</th>
+                    <th class="bg-primary">Mail</th>
+                    <th class="bg-primary">Site</th>
                     @if (@User.IsInRole("Admin"))
                     {
-                        <td>
-                            <div class="btn-group">
-                                <form method="post" action="/Employees/Delete/@employee.EmployeeId">
-                                    <button type="button" class="btn btn-secondary updateEmployee"
-                                            data-employeeid="@employee.EmployeeId" data-firstname="@employee.FirstName" 
-                                            data-lastname="@employee.LastName" data-email="@employee.Email" 
-                                            data-phone="@employee.Phone" data-mobile="@employee.Mobile"
-                                            data-serviceid="@employee.Service.ServiceId" data-siteid="@employee.Site.SiteId">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
-                                    <button type="submit" class="btn btn-danger" asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.EmployeeId">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
+                        <th class="bg-primary">Actions</th>
                     }
                 </tr>
+                </thead>
+                <tbody>
+                @foreach (var employee in Model.Employees)
+                {
+                    <tr style="transition: all .2s ease">
+                        <td>@employee.LastName</td>
+                        <td>@employee.FirstName</td>
+                        <td>
+                            <a href="/Services/Details/@employee.Service.ServiceId">@employee.Service.Name</a>
+                        </td>
+                        <td>@employee.Phone</td>
+                        <td>@employee.Mobile</td>
+                        <td>@employee.Email</td>
+                        <td>
+                            <a href="/Site/Details/@employee.Site.SiteId">@employee.Site.City</a>
+                        </td>
+                        @if (@User.IsInRole("Admin"))
+                        {
+                            <td>
+                                <div class="btn-group">
+                                    <form method="post" action="/Employees/Delete/@employee.EmployeeId">
+                                        <button type="button" class="btn btn-secondary updateEmployee"
+                                                data-employeeid="@employee.EmployeeId" data-firstname="@employee.FirstName"
+                                                data-lastname="@employee.LastName" data-email="@employee.Email"
+                                                data-phone="@employee.Phone" data-mobile="@employee.Mobile"
+                                                data-serviceid="@employee.Service.ServiceId" data-siteid="@employee.Site.SiteId">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        @* If the employee is not the user : *@
+                                        @if (employee.EmployeeId.ToString() == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                                        {
+                                            <button type="submit" class="btn btn-danger" disabled asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.EmployeeId">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button type="submit" class="btn btn-danger" asp-controller="Employees" asp-action="Delete" asp-route-id="@employee.EmployeeId">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        }
+                                    </form>
+                                </div>
+                            </td>
+                        }
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-3 d-flex col-12 gap-3 flex-wrap justify-content-center align-items-center">
+            @for (int i = 1; i <= nbOfPages; i++)
+            {
+                <a href="/Employees/Index/@i" class="btn btn-primary">@i</a>
             }
-            </tbody>
-        </table>
-    </div>
-    <div class="mt-3 d-flex col-12 gap-3 flex-wrap justify-content-center align-items-center">
-        @for (int i = 1; i <= nbOfPages; i++)
-        {
-            <a href="/Employees/Index/@i" class="btn btn-primary">@i</a>
-        }
-    </div>
+        </div>
+    }
+    else
+    {
+        <h1 class="w-100 text-white fw-bold mt-3">Aucun collaborateur trouvé</h1>
+    }
 </div>
 
+<script defer>
+// Capture search form and change its action with the value of the input
 
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = searchForm.querySelector("input[type=search]");
+
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        searchForm.action = "/Employees/Search/?Search=" + searchInput.value;
+        searchForm.submit();
+    });
+
+</script>
+
+@* Modal Handler Script *@
 @if (@User.IsInRole("Admin"))
 {
     <script defer>

@@ -46,7 +46,7 @@ namespace AnnuaireCESI.Controllers
         {
             var newService = await _context.Services.FindAsync(newEmployee.ServiceId);
             var newSite = await _context.Sites.FindAsync(newEmployee.SiteId);
-            
+
             var emailExist = await _context.Employees.AnyAsync(e => e.Email == newEmployee.Email);
 
             if (!emailExist)
@@ -80,7 +80,6 @@ namespace AnnuaireCESI.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(UpdateEmployeeViewModel updatedEmployee)
         {
-            
             var newService = await _context.Services.FindAsync(updatedEmployee.ServiceId);
             var newSite = await _context.Sites.FindAsync(updatedEmployee.SiteId);
             var employee = await _context.Employees.Include(e => e.Service).Include(e => e.Site)
@@ -101,6 +100,7 @@ namespace AnnuaireCESI.Controllers
 
                 return RedirectToAction("Index");
             }
+
             ViewBag.Error = "L'employé n'a pas pu être modifié";
             return View("Index");
         }
@@ -116,14 +116,23 @@ namespace AnnuaireCESI.Controllers
 
             return RedirectToAction("Index");
         }
-        
+
         [HttpGet]
-        public async Task<IActionResult> Search(string search)
+        public async Task<IActionResult> Search()
         {
+            
+            var search = Request.Query["Search"].ToString();
+            var trimmedSearch = search.Trim().ToLower();
             var employees = await _context.Employees
                 .Include(e => e.Site)
                 .Include(e => e.Service)
-                .Where(e => e.FirstName.Contains(search) || e.LastName.Contains(search) || e.Email.Contains(search) || e.Phone.Contains(search) || e.Mobile.Contains(search) || e.Service.Name.Contains(search) || e.Site.City.Contains(search))
+                .Where(e => e.FirstName.Trim().ToLower().Contains(trimmedSearch)
+                            || e.LastName.Trim().ToLower().Contains(trimmedSearch)
+                            || e.Email.Trim().ToLower().Contains(trimmedSearch)
+                            || e.Phone.Trim().ToLower().Contains(trimmedSearch)
+                            || e.Mobile.Trim().ToLower().Contains(trimmedSearch)
+                            || e.Service.Name.Trim().ToLower().Contains(trimmedSearch)
+                            || e.Site.City.Trim().ToLower().Contains(trimmedSearch))
                 .ToListAsync();
 
             var sites = await _context.Sites.ToListAsync();
@@ -134,6 +143,7 @@ namespace AnnuaireCESI.Controllers
                 Employees = employees,
                 Sites = sites,
                 Services = services,
+                Search = search
             };
             ViewBag.Search = search;
             return View("Index", Data);

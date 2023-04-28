@@ -5,39 +5,23 @@
     <projectFile profileName="https">AnnuaireCESI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="Added link to sites in home index view">
-      <change afterPath="$PROJECT_DIR$/Services/Hash/HashService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/Hash/IHashService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Auth/ChangePassword.cshtml" afterDir="false" />
+    <list default="true" id="6795bd53-a06e-4c23-a2b0-e76774b411a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnuaireCESI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AdminController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/EmployeesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmployeesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServicesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/SitesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SitesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/AnnuaireDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/EmployeeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EmployeeModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Auth/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Auth/Login.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Employees/Add.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Employees/Add.cshtml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Employees/Details.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Employees/Details.cshtml.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Employees/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Employees/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Services/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Services/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Services/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Services/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Sites/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Sites/Details.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Sites/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Sites/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/AnnuaireCESI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/AnnuaireCESI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/AnnuaireCESI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +31,7 @@
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/ServicesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Controllers/SitesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Migrations/AnnuaireDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Models/SiteModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Details.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Services/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/evanosm/Documents/dev/dotnet/AnnuaireCESI/Views/Sites/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/bin/Debug/net7.0/AnnuaireCESI.deps.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -73,24 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowGit.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "HotReloadSettingsPage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ToolWindowGit.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;HotReloadSettingsPage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
-      "/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
-      "/Users/evanosm/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/evanosm/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
+      &quot;/Users/evanosm/.local/share/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.AnnuaireCESI: https">
     <configuration name="AnnuaireCESI: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AnnuaireCESI.csproj" />
@@ -137,7 +109,8 @@
       <workItem from="1682316389901" duration="22010000" />
       <workItem from="1682514956781" duration="103000" />
       <workItem from="1682515067595" duration="799000" />
-      <workItem from="1682516129167" duration="39603000" />
+      <workItem from="1682516129167" duration="40558000" />
+      <workItem from="1682661802550" duration="5362000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1682252483327</created>
@@ -286,7 +259,28 @@
       <option name="project" value="LOCAL" />
       <updated>1682587886056</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Commit">
+      <created>1682640492946</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1682640492946</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Admin commit">
+      <created>1682640518955</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1682640518955</updated>
+    </task>
+    <task id="LOCAL-00024" summary="commit">
+      <created>1682640555052</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1682640555052</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,6 +321,9 @@
     <MESSAGE value="Project files and style" />
     <MESSAGE value="Site Controller and Views" />
     <MESSAGE value="Added link to sites in home index view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added link to sites in home index view" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="Admin commit" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>
